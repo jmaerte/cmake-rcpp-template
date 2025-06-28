@@ -1,0 +1,6 @@
+[submodule "src/backend/lib/OpenCL-CLHPP"]
+	path = src/backend/lib/OpenCL-CLHPP
+	url = https://github.com/KhronosGroup/OpenCL-CLHPP
+[submodule "src/backend/lib/OpenCL-Headers"]
+	path = src/backend/lib/OpenCL-Headers
+	url = https://github.com/KhronosGroup/OpenCL-Headers
