@@ -113,7 +113,7 @@ This template includes an example GPU-based distance matrix computation via **Op
 
 ## 🛠️ Getting Started
 
-1. Clone this repository
+1. Clone this repository (use `--recursive` option in order to get the OpenCL headers aswell!)
 2. Modify the `src/backend/` CMake code and `src/*.cpp` `Rcpp`- and `SEXP`-bindings
 3. Add new R functions in the `R/` directory calling your `SEXP`-binding functions
 4. Document functions via `Rmarkdown` in `man`
