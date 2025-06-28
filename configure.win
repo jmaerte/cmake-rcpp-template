@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Compile the Backend library first:
 echo "** COMPILING THE OPENCL BACKEND CODE NOW! **"
 
 BUILD_DIR="src/backend/build"
@@ -23,6 +24,7 @@ cmake --build . || {
 	exit 1
 }
 
+# Copy the binary in src/
 DLL_NAME="BACKEND.dll"
 if [ -f "$DLL_NAME" ]; then
 	cp "$DLL_NAME" "../../../$INSTALL_DIR/"
@@ -36,6 +38,7 @@ fi
 echo "** SUCCESSFULLY BUILT OPENCL BACKEND CODE! **"
 
 
+# Copy the kernel files (Resources)
 cd "../../.."
 
 

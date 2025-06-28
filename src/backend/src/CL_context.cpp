@@ -10,7 +10,6 @@
 namespace backend {
 
 	CL_context::CL_context() {
-		// Step 1: Get all platforms
 		std::vector<cl::Platform> platforms;
         	try {
 		    cl::Platform::get(&platforms);
