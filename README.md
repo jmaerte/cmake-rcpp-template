@@ -20,7 +20,7 @@ A **CRAN-ready R package template** that integrates the simplicity of **CMake** 
 ## 📁 Project Structure
 
 ```
-project
+cmake-rcpp-template
 │	# Package metadata files
 |	# configure and configure.win handle the installation
 |
