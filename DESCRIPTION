@@ -1,0 +1,10 @@
+Package: CMakeRcppTemplate
+Type: Package
+Title: A project template for using CMake with Rcpp.
+Version: 0.1.0
+Author: Julian Märte
+Maintainer: Julian Märte <mail@maertej.com>
+Description: A template for building CRAN-ready R packages using Rcpp and CMake. Provides a modular structure to integrate external C/C++ libraries (e.g., OpenCL, OpenGL) in a platform-independent way. Designed for projects requiring high-performance native code without manual environment configuration or complex Makefiles.
+LinkingTo: Rcpp
+Imports: Rcpp
+SystemRequirements: OpenCL, CMake

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+echo "** COMPILING THE OPENCL BACKEND CODE NOW! **"
+
+BUILD_DIR="src/backend/build"
+INSTALL_DIR="src"
+
+mkdir -p "$BUILD_DIR"
+mkdir -p "$INSTALL_DIR"
+
+cd "$BUILD_DIR" || {
+	echo "Build dir was not made! Check if you have permissions..."
+	exit 1
+}	
+
+cmake .. -DCMAKE_BUILD_TYPE=Release || {
+	echo "CMake configuration failed..."
+	exit 1
+}
+
+cmake --build . || {
+	echo "Build failed..."
+	exit 1
+}
+
+DLL_NAME="BACKEND.dll"
+if [ -f "$DLL_NAME" ]; then
+	cp "$DLL_NAME" "../../../$INSTALL_DIR/"
+elif [ -f "Release/$DLL_NAME" ]; then
+	cp "Release/$DLL_NAME" "../../../$INSTALL_DIR/"
+else
+	echo "Could not find built $DLL_NAME"
+	exit 1
+fi
+
+echo "** SUCCESSFULLY BUILT OPENCL BACKEND CODE! **"
+
+
+cd "../../.."
+
+
+echo "** COPYING KERNELS! **"
+
+mkdir -p inst/kernels
+
+cp src/backend/kernels/*.cl inst/kernels/ 2>/dev/null
+
+echo "** SUCCESSFULLY COPIED KERNELS! **"
+
+
+
+exit 0

@@ -1,0 +1,2 @@
+PKG_CPPFLAGS += -I./backend/include
+PKG_LIBS += -L. -lBACKEND
