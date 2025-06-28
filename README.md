@@ -24,35 +24,35 @@ project
 │	# Package metadata files
 |	# configure and configure.win handle the installation
 |
-├── src
+├──	src
 │	│   # *.cpp define the Rcpp wrapper functions
 │	│
-│	└── backend
+│	└──	backend
 │		│   # A standard CMake project
 |		|
-|		├── include
+|		├──	include
 │		|	|	# public headers; should not include external
-|		|	└── # library headers; otherwise Rcpp needs to link too.
+|		|	└──	# library headers; otherwise Rcpp needs to link too.
 |		|
-|		├── src
+|		├──	src
 |		|	|	# *.cpp define the actual implementation of functionality
 |		|	|
-|		|	└── internal
+|		|	└──	internal
 |		|		| 	# Some internal header files that may 
-|		|		└── # include external library headers.
+|		|		└──	# include external library headers.
 |		|
-|		└── lib
-|			└── # Some external library headers.
+|		└──	lib
+|			└──	# Some external library headers.
 |	
-├── R
-|	└── # Caller scripts for the Rcpp functions and other R functions
+├──	R
+|	└──	# Caller scripts for the Rcpp functions and other R functions
 |
-├── man
-|	└── # Documentation goes here
+├──	man
+|	└──	# Documentation goes here
 |
 └──	inst
 	| 	# The library features the possibility to load external
-	└── # resources from this folder.
+	└──	# resources from this folder.
 ```
 
 📝 **Note:** Public headers (`backend/include`) define C/C++ interfaces compatible with `Rcpp`; they should not include external library headers as `Rcpp` does not link against them. Private headers (`backend/src/internal`) manage actual implementation details, allowing clean abstraction.
